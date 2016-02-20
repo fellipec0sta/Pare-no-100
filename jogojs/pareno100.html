@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="UTF-8">
+
+<link href="comp/css/bootstrap.css" rel="stylesheet" />
+<link href="comp/css/new.css" rel="stylesheet" />
+
+<STYLE>
+font {color: #ffffff; font-size: 10pt; font-family: Comic Sans MS;}
+input { border-style:solid; border-top-width:1px; border-right-width:1px; border-bottom-width:1px; border-left-width:1px;  color: #00ff00; font-family: comic sans ms; background: #4682b4;}
+</STYLE>
+<script LANGUAGE="JavaScript">
+function Title() {document.title="Pare no 1o0"; window.setTimeout("Title1();",1);}
+function Title1() {document.title="Pare no 10o"; window.setTimeout("Title();",1);}
+counter=0;
+function Counter1() {
+window.status="Counter: " + counter;
+document.game.number.value=counter; 
+counter++;
+Time=window.setTimeout("Counter1();",1); 
+if (counter==106) {
+	counter=0;
+}}
+function Results() {
+window.clearTimeout(Time);
+if (counter==101) {
+	alert("Parabéns! você parou no 100");
+}
+if (counter!=101) {
+	counter--;
+	alert("Aw! você errou e parou no " + counter + ", Tente novamente!");
+}
+counter=0;
+window.status="Counter: " + counter;
+document.game.number.value=counter;
+}
+</script>
+</head>
+<body onUnLoad="alert('Obrigado por Jogar');" onLoad="Title();" onKeyPress="Results();">
+	</font>
+	<div class="container">
+		<div class="jogo">
+	<center>
+	<form name="game">
+	<input type="text" name="number" size="2" VALUE="0" onFocus="this.blur();" style="font-size: 200;">
+		<BR>
+			<input type="button" VALUE="Start" onClick="Counter1(); counter=0;"> <input type="button" VALUE="Stop!" onClick="Results(); counter=0;"> <input type="button" VALUE="Regras" onClick="alert('Pare no 100 \nRegras:  O objetivo do jogo é fazer com que o contador pare em 100. Para iniciar o contador, clique no botão Start, Para pará-lo, clique no botão Stop! ou pressione qualquer tecla! no seu teclado ');"> 
+		<br>
+	<font>
+		<b>sugestão:</b> Você pode parar usando o seu teclado.<br>Pare no 100</font>
+	</font></form>
+		</div>
+	</div>
+	<embed width="1" height="1" src="topgear.mp3" autostart="true" loop="true">
+	</center>
+
+</body>
